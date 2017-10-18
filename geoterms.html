@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Geotherm Plots</title>
+  <!-- Plotly.js -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+  <div id="myDiv"><!-- Plotly chart will be drawn inside this DIV --></div>
+  <script>
+    var hc = 32.0e3; //m
+    var T0 = 288; //°k
+    var Hc = 1.0e-6; //W*m^-3
+    var Hm = 0.0e-6; //W*m^-3
+    var Kc = 2.9; //W*m^-1*K^-1
+    var Km = 3.0; //W*m^-1*K^-1
+    var Qs = 63e-3; //W*m^-2
+    var zmin = 0; //m
+    var zmax = 120e3; //m
+    var z1 = [];
+    var z2 = [];
+    var Tc = [];
+    var Tm = [];
+    for (var i = zmin; i <= hc; i+=500) {
+        z1.push(i);
+        Tc.push(T0 + ((Qs * z1[z1.length - 1])/Kc) - ((Hc * Math.pow(z1[z1.length - 1],2))/(2*Kc)));
+        z1[z1.length - 1] = -i;
+    }
+
+    for (var i = hc; i <= zmax; i+=500) {
+        z2.push(i);
+        Tm.push(Tc[Tc.length - 1] + (z2[z2.length - 1]-hc) *(Qs- (Hc * hc))/Km - (Hm * Math.pow(z2[z2.length - 1],2))/(2*Km));
+        z2[z2.length - 1] = -i;
+    }
+    var trace1 = {
+        x: Tc,
+        y: z1,
+        name: 'Crust Temp.',
+        type: 'scatter'
+    };
+    var trace2 = {
+        x: Tm,
+        y: z2,
+        name: 'Mantle Temp.',
+        type: 'scatter'
+    };
+    var layout = {
+        title: 'Calculation of the geotherm for a continental lithosphere assuming a constant radiogenic heat production for the crust',
+        xaxis: {
+            title:'Temperature (K)',
+            titlefont: {
+                family: 'Courier New, monospace',
+                size: 18,
+                color: '#7f7f7f'
+            }
+        },
+        yaxis: {
+            title:'Depth (m)',
+            titlefont: {
+                family: 'Courier New, monospace',
+                size: 18,
+                color: '#7f7f7f'
+            }
+        }
+    };
+    var data = [trace1,trace2];
+    Plotly.newPlot('myDiv', data, layout);
+  </script>
+</body>
+</html>
