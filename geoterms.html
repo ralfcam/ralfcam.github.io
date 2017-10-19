@@ -7,17 +7,28 @@
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
+  <form  action="javascript:;" onsubmit="PlotIso();">
+    hc(m): <input type="text" value="32.0e3" id="hc"><br>
+    T0(°k): <input type="text" value="288" id="T0"><br>
+    Hc(W*m^-3): <input type="text" value="1.0e-6" id="Hc"><br>
+    Hm(W*m^-3): <input type="text" value="0.0e-6" id="Hm"><br>
+    Kc(W*m^-1*K^-1): <input type="text" value="2.9" id="Kc"><br>
+    Km(W*m^-1*K^-1): <input type="text" value="3.0" id="Km"><br>
+    Qs(W*m^-2): <input type="text" value="63e-3" id="Qs"><br>
+    <input type="submit" value="Process" ><br>
+  </form>
   <div id="myDiv"><!-- Plotly chart will be drawn inside this DIV --></div>
   <script>
-    var hc = 32.0e3; //m
-    var T0 = 288; //°k
-    var Hc = 1.0e-6; //W*m^-3
-    var Hm = 0.0e-6; //W*m^-3
-    var Kc = 2.9; //W*m^-1*K^-1
-    var Km = 3.0; //W*m^-1*K^-1
-    var Qs = 63e-3; //W*m^-2
+  function PlotIso() {
+    var hc = Number(document.getElementById("hc").value); //m
+    var T0 = Number(document.getElementById("T0").value); //°k
+    var Hc = Number(document.getElementById("Hc").value); //W*m^-3
+    var Hm = Number(document.getElementById("Hm").value); //W*m^-3
+    var Kc = Number(document.getElementById("Kc").value); //W*m^-1*K^-1
+    var Km = Number(document.getElementById("Km").value); //W*m^-1*K^-1
+    var Qs = Number(document.getElementById("Qs").value); //W*m^-2
     var zmin = 0; //m
-    var zmax = 120e3; //m
+    var zmax = 200e3; //m
     var z1 = [];
     var z2 = [];
     var Tc = [];
@@ -66,6 +77,7 @@
     };
     var data = [trace1,trace2];
     Plotly.newPlot('myDiv', data, layout);
+  } 
   </script>
 </body>
 </html>
