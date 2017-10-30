@@ -79,9 +79,9 @@
   </div>
 </div>
 <h3>Calculation of the geotherm for a continental lithosphere,<br>assuming a constant radiogenic heat production for the crust.</h3>
-<div id="myDivIso" style="max-width: 50vw; margin-left: 25vw"><!-- Plotly chart will be drawn inside this DIV --></div>
+<div id="myDivIso" style="max-width: 70vw; margin-left: 15vw"><!-- Plotly chart will be drawn inside this DIV --></div>
 <h3>Calculation of the stress envelope, using the calculated geotherm.</h3>
-<div id="myDivStr" style="max-width: 50vw; margin-left: 25vw"><!-- Plotly chart will be drawn inside this DIV --></div>
+<div id="myDivStr" style="max-width: 70vw; margin-left: 15vw"><!-- Plotly chart will be drawn inside this DIV --></div>
 <script>
     function PlotIso() {
         var hc = Number(document.getElementById("hc").value); //m
@@ -153,39 +153,42 @@
         var int = 1500;
         var sigma_b = (z1.concat(z2)).map(function(x) { return x * Beta; });
         for (var i = 0; i <= Tc.length-1; i++) {
-            sigma_dc.push(Math.pow((epsilon/Ac),(1/n)) * Math.pow(Math.E,Qc/(n*R*Tc[i])));
+            var ts = Math.pow((epsilon/Ac),(1/n)) * Math.pow(Math.E,Qc/(n*R*Tc[i]));
+            if (ts >= sigma_b[i]) {
+                sigma_dc.push(sigma_b[i]);
+            }
+            else  sigma_dc.push(ts);
         }
         for (var i = 0; i <= Tm.length-1; i++) {
-            sigma_dm.push(Math.pow((epsilon/Am),(1/n)) * Math.pow(Math.E,Qm/(n*R*Tm[i])));
+            var ts = Math.pow((epsilon/Am),(1/n)) * Math.pow(Math.E,Qm/(n*R*Tm[i]));
+            if (ts >= sigma_b[i+sigma_dc.length]) {
+                sigma_dm.push(sigma_b[i+sigma_dc.length]);
+            }
+            else  sigma_dm.push(ts);
         }
+
         var trace1 = {
             x: sigma_dc,
             y: z1,
-//            name: 'Crust Temp.',
+            name: 'Crust Stress.',
 //            type: 'scatter'
         };
         var trace2 = {
             x: sigma_dm,
             y: z2,
-//            name: 'Mantle Temp.',
+            name: 'Mantle Stress.',
 //            type: 'scatter'
         };
         var trace3 = {
-            x: sigma_b,
-            y: z1.concat(z2),
-            name: 'Sigma B',
-//            type: 'scatter'
-        };
-        var trace4 = {
-            x: [0, int],
+            x: [sigma_dc[(sigma_dc.length)-1], sigma_dm[0]],
             y: [-hc, -hc],
-//            name: 'Mantle Temp.',
+            name: 'Moho.',
 //            type: 'scatter'
         };
         var layout = {
             title: 'Stress envelope',
             xaxis: {
-                range: [0, int],
+//                range: [0, int],
                 title:'Sigma 1 - 3 (MPa)',
                 titlefont: {
                     family: 'Courier New, monospace',
@@ -202,7 +205,7 @@
                 }
             }
         };
-        data = [trace1,trace2,trace3,trace4];
+        data = [trace1,trace2,trace3];
         Plotly.newPlot('myDivStr', data, layout);
     }
 </script>
@@ -228,8 +231,6 @@
     span.onclick = function() {
         modal.style.display = "none";
     }
-
-
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
         if (event.target == modal) {
