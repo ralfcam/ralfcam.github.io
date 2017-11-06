@@ -78,6 +78,7 @@
     </form>
   </div>
 </div>
+<a href="https://drive.google.com/open?id=0B-5SMLrZIlmPWGNOX3pyVXFfY00" target="_blank"><h4 id="e"></h4></a>  
 <h3>Calculation of the geotherm for a continental lithosphere,<br>assuming a constant radiogenic heat production for the crust.</h3>
 <div id="myDivIso" style="max-width: 70vw; margin-left: 15vw"><!-- Plotly chart will be drawn inside this DIV --></div>
 <h3>Calculation of the stress envelope, using the calculated geotherm.</h3>
@@ -208,6 +209,25 @@
         data = [trace1,trace2,trace3];
         Plotly.newPlot('myDivStr', data, layout);
     }
+     //Din Top.
+        var  TL = 1603; //Thermal litosphere K
+        function zIs(el) {
+        return el >= TL;
+        }
+        var ind = Tc.concat(Tm).findIndex(zIs); 
+        var Lit_thic = -1 * z1.concat(z2)[ind];
+              
+        var H0 = 2400; //m
+        var rhow = 1030 // si
+        var rhoa = 3200 // si
+        var rhoc = 2830; // si
+        var alpha = 3.5e-5; //K^-1
+        var rhom = rhoa *(1 + (alpha / 2) * (TL - Tm[0]));
+        var rhol = ((rhoc * hc) +(rhom * (Lit_thic - hc) )) / Lit_thic;
+        var e = (((rhoa - rhol)/rhoa) * Lit_thic) - H0;
+        if (e < 0) e = e * rhoa/(rhoa - rhow);
+        document.getElementById("e").innerHTML = "Calculated Elevation: "+Math.round(e);
+    
 </script>
 <script>
     // Get the modal
