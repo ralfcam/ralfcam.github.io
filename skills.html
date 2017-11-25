@@ -5,6 +5,37 @@
   <title>Jose R. Campos T. CV</title>
   <link rel="stylesheet" href="css/style.css">
   <link href='https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic' rel='stylesheet' type='text/css'>
+  <link rel='stylesheet prefetch' href='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css'>
+  <style>
+    #skills span {
+      top: -30px;
+      left: 2%;
+      position: relative;
+      font-size: 1.4em;
+      font-weight: bolder;
+      font-family: monospace;
+      color: #fff;
+    }
+
+    progress {
+      background-color: #837c9a;
+      border: 0;
+      height: 2.5em;
+      width: 100%;
+    }
+
+    progress::-webkit-progress-bar {
+      background-color: #e0eaf0;
+    }
+
+    progress::-webkit-progress-value {
+      background-color: #3d3a41;
+    }
+
+    progress::-moz-progress-bar {
+      background-color: #3d3a41;
+    }
+  </style>
 </head>
 <body>
 <!-- MAIN CONTAINER -->
@@ -25,9 +56,9 @@
           </ul>
           <div class="clear"></div>
           <ul class="header_menu horizontal_list">
-            <li><a class="no_border purple" href="index.html">Profile</a></li>
+            <li><a href="index.html">Profile</a></li>
             <li><a href="edu.html">Education</a></li>
-            <li><a href="skills.html">Skills</a></li>
+            <li><a class="no_border purple" href="skills.html">Skills</a></li>
             <li><a href="workexp.html">Work Experience</a></li>
             <li><a href="https://codepen.io/ralfcam/" target="_blank">Jota's Lab</a></li>
             <li><a href="https://www.instagram.com/ralfcam_jota/" target="_blank">Photography</a></li>
@@ -47,7 +78,7 @@
         <div class="contact_details_content">
           <h2>Contact details</h2>
           <p class="purple">Phone:</p>
-          <p><a href="tel:0034611444375">+34 611 444 375</a></p>
+          <p><a href="tel:+34611444375">+34 611 444 375</a></p>
           <p class="purple">Email:</p>
           <p>campos.cantropus@gmail.com</p>
           <p class="purple">Adress:</p>
@@ -72,16 +103,18 @@
       <!-- PROFILE CONTENT -->
       <div id="content_container">				
         <div class="block">
-          <h1>Profile</h1>
-          <blockquote class="profile_quote">
-            <p>"Imagination is more important than knowledge. For knowledge is limited, whereas imagination embraces the entire world, stimulating progress, giving birth to evolution."
-            <p>Albert Einstein, What Life Means to Einstein (1929)</p>
-            <span class="entypo-quote"></span>
-          </blockquote>
-        </div>
-        <div class="block">
-          <h2>A few words about me</h2>
-          <p>Until now, in my life, I change from active moments with a lot of variety, challenges and improvisations, to moments of tranquility and stability, being difficult to stay in a place during a long time. I consider myself a tolerant and respectful person with open mind and quite honest. I really like to listen people stories and backgrounds and their different experiences around the world.</p>				
+          <h1>Programming Languages - Web</h1>
+          <section id="skills">
+            <progress value="85" max="100"></progress><span>JavaScript/jQuery</span>
+            <progress value="80" max="100"></progress><span>HTML5/CSS3</span>
+            <progress value="60" max="100"></progress><span>React</span>
+            <progress value="50" max="100"></progress><span>AngularJS</span>
+            <progress value="30" max="100"></progress><span>NodeJS</span>
+            <progress value="70" max="100"></progress><span>Git & GitHub</span>
+            <progress value="65" max="100"></progress><span>Java/PHP</span>
+            <progress value="60" max="100"></progress><span>MySQL</span>
+            <progress value="60" max="100"></progress><span>Access & Otrhers (Microsoft)</span>
+          </section>
         </div>
         <div class="horizontal_line">
           <div class="line_left"></div>
@@ -91,19 +124,13 @@
           <div class="line_right"></div>
         </div>
         <div class="block">
-          <h2>Philosophy</h2>
-          <p>I belive in ethic and moral not in imposed rules that you "must" follow.</p>
-          <div class="philosophy_content">
-            <p>I believe life is made from different shades of grey, not from black and white. Furthermore, as a human being with rationality, I think it is our duty to take care of the world and treat others as one would like others to treat oneself. This way of perceiving reality affects my beliefs and my way of behaving. Summarizing on several points:</p>
-            <ul>
-              <li>Pragmatic</li>
-              <li>Honest</li>
-              <li>Respectful</li>
-              <li>Open-minded</li>
-              <li>Integral</li>
-            </ul>
-            <div class="clear"></div>
-          </div>
+          <h1>Programming Languages -<br>Data Driven</h1>
+          <section id="skills">
+            <progress value="85" max="100"></progress><span>R</span>
+            <progress value="80" max="100"></progress><span>MatLab</span>
+            <progress value="60" max="100"></progress><span>Phyton</span>
+            <progress value="50" max="100"></progress><span>C++</span>
+          </section>
         </div>
         <div class="horizontal_line">
           <div class="line_left"></div>
@@ -113,17 +140,12 @@
           <div class="line_right"></div>
         </div>
         <div class="last block">
-          <h2>Interests & Hobbies</h2>
-          <p>I'm passionate about languages and society, engineering and earth-sciences:</p>
-          <ul>
-            <li>Geo-sciences</li>
-            <li>Visiting new places & meeting people</li>
-            <li>Hiking and biking, swimming and surfing</li>
-            <li>Web/Software developing & engineering</li>
-            <li>Data science & engineering</li>
-            <li>Artificial intelligence / Machine learning</li>
-            <li>Audiovisual arts</li>
-          </ul>
+          <h1>Human Languages</h1>
+          <section id="skills">
+            <progress value="85" max="100"></progress><span>Spanish (Native)</span>
+            <progress value="80" max="100"></progress><span>Inglish Advanced</span>
+            <progress value="45" max="100"></progress><span>French Intermediate</span>
+          </section>
         </div>
       </div>
       <div class="clear"></div>
@@ -134,7 +156,16 @@
 		</div>
 <!--SCRIPS-->
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
   <script  src="js/index.js"></script>
+  <script type="text/javascript">
+      $(function() {
+          $('progress').each(function() {
+              var max = $(this).val();
+              $(this).val(0).animate({ value: max }, { duration: 2000, easing: 'easeOutCirc' });
+          });
+      });
+  </script>
 
 </body>
 </html>
