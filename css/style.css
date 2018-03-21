@@ -72,7 +72,6 @@
 .central_circle{
 	width: 26px;
 	height: 26px;
-	top: 0px;
 	left: 322px;
 }
 .right_circle{
@@ -205,7 +204,7 @@ li:before {
 	margin-top: 5px;
 	color: #5ce2af;
 	font-size: 18px;
-	letter-spacig: 2px;
+	letter-spacing: 2px;
 }
 
 .download_print_buttons {
@@ -270,16 +269,14 @@ li:before {
 	height: 260px;
 	background: #353638;
 	border: 1px solid #403F44;
-	margin-top: 30px;
+	margin: 30px 5px;
 }
 .profile_picture{
 	width: 210px;
 	height: 240px;
 	margin:10px;
-	background-image: url("https://avatars1.githubusercontent.com/u/13245179?v=4&s=400");
+	background: url("https://avatars1.githubusercontent.com/u/13245179?v=4&s=400") no-repeat 50% 50%;
 	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
 }
 
 .hello_content,
@@ -365,7 +362,6 @@ li:before {
 	font-size: 35px;
 	text-decoration: none;
 	color: #000507;
-	padding: 0;
 	padding: 0 5px;
 }
 .social_icons a span.invisible {
