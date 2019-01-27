@@ -340,7 +340,7 @@
 			width: 80px;
 			height: 80px;
 			margin-right: 1em;
-			background: #3ac984;
+			background: #ffb84e;
 			line-height: 80px;
 			text-align: center;
 			border-radius: 10px;
@@ -484,7 +484,7 @@
 		position: relative;
 
 		/* The image used */
-		background-image: url("../images/Imagenes DICAMI/Fondo-panes.jpg");
+		background-image: url("../images/Fondo-panes.jpg");
 
 		/* Set a specific height */
 		height: 1000px;
