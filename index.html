@@ -1,131 +1,115 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>CodePen - Hover slider (dark/light) - ver 3</title>
-	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
-	<link rel='stylesheet' href='https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/unicons.css'>
-	<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Jose Campos - ralfcam</title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+    <link rel='stylesheet' href='https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/unicons.css'>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-	<!-- CANVAS BACKGROUND -->
-	<canvas id="particle-canvas"></canvas>
+<!-- CANVAS BACKGROUND -->
+<canvas id="particle-canvas"></canvas>
 
-	<div id="z1">
-		<!-- partial:index.partial.html -->
-<!--		<div class="hero-center-section">-->
-<!--			<div class="left-text">hi</div>-->
-<!--			<div class="container">-->
-<!--				<div class="row justify-content-center">-->
-<!--					<div class="col-md-8">-->
-<!--						<div class="img-wrap">-->
-<!--							<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/nature.jpg" alt="">-->
-<!--						</div>-->
-<!--					</div>-->
-<!--				</div>-->
-<!--			</div>-->
-<!--		</div>-->
-		<div class="hero-center-section">
-			<div class="left-text">travel</div>
-			<div class="container">
-				<div class="row justify-content-center">
-					<div class="col-md-8">
-						<div class="img-wrap">
-							<img src="./imgs/ig_pics.gif" alt="">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="hero-center-section">
-			<div class="left-text">go - ml</div>
-			<div class="container">
-				<div class="row justify-content-center">
-					<div class="col-md-8">
-						<div class="img-wrap">
-							<img src="./imgs/ralfcam__20200226_191508_0_transfered_style.jpg" alt="">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="hero-center-section">
-			<div class="left-text">portfolio</div>
-			<div class="container">
-				<div class="row justify-content-center">
-					<div class="col-md-8">
-						<div class="img-wrap">
-							<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/animals.jpg" alt="">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="hero-center-section">
-			<div class="left-text">blog</div>
-			<div class="container">
-				<div class="row justify-content-center">
-					<div class="col-md-8">
-						<div class="img-wrap">
-							<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/business.jpg" alt="">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="hero-center-section">
-			<div class="left-text">contact</div>
-			<div class="container">
-				<div class="row justify-content-center">
-					<div class="col-md-8">
-						<div class="img-wrap">
-							<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/art.jpg" alt="">
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="section padding-top-bottom over-hide z-bigger">
-			<ul class="slide-buttons">
-<!--				<li class="">-->
-<!--					<a href="#0" class="hover-target" data-hover="hi">hi</a>-->
-<!--				</li>-->
-				<li class="">
-					<a href="#0" class="hover-target" class="hover-target" data-hover="travel">travel</a>
-				</li>
-				<li class="">
-					<a href="#0" class="hover-target" data-hover="go - ml">go - ml</a>
-				</li>
-				<li class="">
-					<a href="#0" class="hover-target" data-hover="portfolio">portfolio</a>
-				</li>
-				<li class="">
-					<a href="#0" class="hover-target" data-hover="blog">blog</a>
-				</li>
-				<li class="">
-					<a href="#0" class="hover-target" data-hover="contact">contact</a>
-				</li>
-			</ul>
-		</div>
+<div id="z1">
 
-		<!-- Page cursor
-		================================================== -->
+    <div class="hero-center-section">
+        <div class="left-text">travel</div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="img-wrap">
+                        <img src="./imgs/ig_pics.gif" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-center-section">
+        <div class="left-text">go - ml</div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="img-wrap">
+                        <img src="./imgs/ralfcam__20200226_191508_0_transfered_style.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-center-section">
+        <div class="left-text">projects</div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="img-wrap">
+                        <img src="https://media.giphy.com/media/toXKzaJP3WIgM/giphy.gif" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-center-section">
+        <div class="left-text">blog</div>
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="img-wrap">
+                        <img src="https://media.giphy.com/media/3o7WIz0R4XwKgs2fHG/giphy.gif" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-		<div class='cursor' id="cursor"></div>
-		<div class='cursor2' id="cursor2"></div>
-		<div class='cursor3' id="cursor3"></div>
-	</div>
+    <div class="section padding-top-bottom over-hide z-bigger">
+        <ul class="slide-buttons">
+            <li>
+                <a href="#0" class="hover-target" class="hover-target" data-hover="travel">travel</a>
+            </li>
+            <li>
+                <a href="#0" class="hover-target" data-hover="go - ml">go - ml</a>
+            </li>
+            <li>
+                <a href="#0" class="hover-target" data-hover="projects">projects</a>
+            </li>
+            <li>
+                <a href="#0" class="hover-target" data-hover="blog">blog</a>
+            </li>
+        </ul>
+    </div>
 
+    <!-- Page cursor
+    ================================================== -->
+
+    <div class='cursor' id="cursor"></div>
+    <div class='cursor2' id="cursor2"></div>
+    <div class='cursor3' id="cursor3"></div>
+
+    <!-- Link to page
+	================================================== -->
+
+    <a href="" class="link-to-page hover-target" target="_blank">
+        <div class="circle-icon"></div>
+    </a>
+
+    <!-- Dark/light switch
+    ================================================== -->
+
+    <div class="bottom-right">
+        <div class="switch">
+            <div class="circle hover-target"></div>
+        </div>
+    </div>
+
+</div>
 
 
 </body>
 
-
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
-<script  src="./canvas_animation.js"></script>
-<script  src="script.js"></script>
-
-
+<script src="script.js"></script>
+<script src="./canvas_animation.js"></script>
 
 </html>
